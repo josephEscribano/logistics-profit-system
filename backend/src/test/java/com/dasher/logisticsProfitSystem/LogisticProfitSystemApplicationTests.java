@@ -1,10 +1,10 @@
-package com.dasher.backend;
+package com.dasher.logisticsProfitSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class LogisticProfitSystemApplicationTests {
 
     @Test
     void contextLoads() {
