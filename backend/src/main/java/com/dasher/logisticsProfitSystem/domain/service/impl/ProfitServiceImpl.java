@@ -1,23 +1,27 @@
 package com.dasher.logisticsProfitSystem.domain.service.impl;
 
 import com.dasher.logisticsProfitSystem.domain.model.Profit;
+import com.dasher.logisticsProfitSystem.domain.repository.ProfitRepository;
 import com.dasher.logisticsProfitSystem.domain.service.ProfitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @Slf4j
 public class ProfitServiceImpl implements ProfitService {
 
-    @Override
-    public Profit save(Profit profit) {
-        return null;
-    }
+  private final ProfitRepository profitRepository;
 
-    @Override
-    public List<Profit> findAll() {
-        return List.of();
-    }
+  public ProfitServiceImpl(ProfitRepository profitRepository) {
+    this.profitRepository = profitRepository;
+  }
+
+  @Override
+  public Profit calculateAndSave(Profit profit) {
+    Integer calculate = profit.getIncome() - (profit.getCosts() + profit.getAdditionalCosts());
+
+    profit.setProfit(calculate);
+    return profitRepository.save(profit);
+  }
+
 }
