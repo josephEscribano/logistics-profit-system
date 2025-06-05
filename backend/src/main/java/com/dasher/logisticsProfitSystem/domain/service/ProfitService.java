@@ -6,5 +6,4 @@ public interface ProfitService {
 
     Profit calculateAndSave(Profit profit);
 
-
 }

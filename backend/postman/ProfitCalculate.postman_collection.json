@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "72aaf809-f235-4b00-8083-36904b2e8de3",
+		"name": "ProfitCalculate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17948902"
+	},
+	"item": [
+		{
+			"name": "FindShipmentById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "httphttp://localhost:8080/shipment/:shipmentId",
+					"protocol": "httphttp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shipment",
+						":shipmentId"
+					],
+					"variable": [
+						{
+							"key": "shipmentId",
+							"value": "a0000000-0000-0000-0000-000000000001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CalculateProfit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"shipmentId\": \"a0000000-0000-0000-0000-000000000001\",\r\n    \"income\": \"180\",\r\n    \"costs\": \"120\",\r\n    \"additionalCosts\": \"20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/shipment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shipment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
